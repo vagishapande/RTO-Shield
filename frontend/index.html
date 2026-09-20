@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTO Shield</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <span>RTO</span> Shield
+        </div>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            Risk Engine Online
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+            <div>
+                <p class="eyebrow">COD RISK INTELLIGENCE</p>
+                <h1>Stop RTOs<br>before they happen.</h1>
+                <p class="hero-text">
+                    Analyze cash-on-delivery orders and identify
+                    high-risk delivery patterns before shipping.
+                </p>
+            </div>
+        </section>
+
+        <section class="dashboard">
+
+            <div class="card form-card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="section-label">ORDER CHECK</p>
+                        <h2>Analyze an order</h2>
+                    </div>
+                    <span class="shield-icon">◆</span>
+                </div>
+
+                <form id="riskForm">
+
+                    <div class="input-group">
+                        <label>Customer Name</label>
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="e.g. Rahul Sharma"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-row">
+
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input
+                                type="text"
+                                id="phone"
+                                placeholder="9876543210"
+                                required
+                            >
+                        </div>
+
+                        <div class="input-group">
+                            <label>Order Value (₹)</label>
+                            <input
+                                type="number"
+                                id="orderValue"
+                                placeholder="2500"
+                                min="1"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="input-group">
+                        <label>Delivery Address</label>
+                        <textarea
+                            id="address"
+                            placeholder="Enter delivery address"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Delivery Pincode</label>
+                        <input
+                            type="text"
+                            id="pincode"
+                            placeholder="e.g. 121001"
+                            maxlength="6"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit">
+                        Analyze Order
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="card result-card" id="resultCard">
+
+                <div class="empty-state" id="emptyState">
+                    <div class="big-shield">◆</div>
+                    <h2>Ready to analyze</h2>
+                    <p>
+                        Enter order details to generate
+                        a real-time RTO risk assessment.
+                    </p>
+                </div>
+
+                <div
+                    class="result-content"
+                    id="resultContent"
+                    style="display: none;"
+                >
+
+                    <p class="section-label">RISK ASSESSMENT</p>
+
+                    <div class="score-section">
+
+                        <div class="score-circle">
+                            <span id="score">0</span>
+                            <small>/100</small>
+                        </div>
+
+                        <div>
+                            <span class="risk-label" id="riskLevel">
+                                UNKNOWN
+                            </span>
+                            <h2>Risk Score</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="recommendation" id="recommendation">
+                    </div>
+
+                    <h3>Risk factors</h3>
+
+                    <ul id="reasons"></ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
